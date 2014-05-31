@@ -19,7 +19,7 @@ def loginByOk
 	authByOk = Oauth::Ok::OkAuth.new(@options)
 	redirect_to authByOk.getAuthUrl
 end
-<pre></li>
+</pre></li>
 	<li>Create callback action
 <pre>
 def loginByOkCallback
@@ -34,5 +34,6 @@ def loginByOkCallback
 	authByOk = Oauth::Ok::OkAuth.new(@options)
 	userOkData = authByOk.getUserData(get["code"])
 end
-<pre></li>
+</pre></li>
+  <li>Save userdata in DB and login him</li>
 </ol>
