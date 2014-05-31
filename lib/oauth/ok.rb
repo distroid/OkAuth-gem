@@ -6,6 +6,7 @@ module Oauth
 		# Class for OAuth 2.0 on http://odnoklassniki.ru/
 		#
 		class OkAuth
+			require 'net/http'
 
 			@options                                                # array aplication options
 			@@auth_url_options = {
