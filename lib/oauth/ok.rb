@@ -26,9 +26,8 @@ module Oauth
 			# return string
 			#
 			def initialize(auth_options)
-				urlOptions = OkAuth.getUrlOptions
-				@options   = auth_options
-				@options   = @options.merge(urlOptions)
+				@options = OkAuth.getUrlOptions
+				@options = @options.merge(auth_options)
 			end
 
 
