@@ -16,7 +16,7 @@ def loginByOk
 		'redirect_uri'      => [callback_action],
 		'client_secret'     => [your_app_client_secret],
 	}
-	authByOk = OkAuth.new(@options)
+	authByOk = Oauth::Ok::OkAuth.new(@options)
 	redirect_to authByOk.getAuthUrl
 end
 <pre></li>
@@ -31,7 +31,7 @@ def loginByOkCallback
 		'client_secret'     => [your_app_client_secret],
 		'application_key'   => [your_app_client_public],
 	}
-	authByOk = OkAuth.new(@options)
+	authByOk = Oauth::Ok::OkAuth.new(@options)
 	userOkData = authByOk.getUserData(get["code"])
 end
 <pre></li>
