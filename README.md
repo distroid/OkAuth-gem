@@ -3,7 +3,7 @@ OkAuth
 
 Auth class for www.odnoklassniki.ru
 
-<h3>How to use<h3>
+<h3>How to use</h3>
 
 <ol>
 	<li>First create aplication on odnoklassniki.ru</li>
@@ -16,8 +16,7 @@ def loginByOk
 		'redirect_uri'      => [callback_action],
 		'client_secret'     => [your_app_client_secret],
 	}
-	authByOk = Oauth::Ok::OkAuth.new(@options)
-	redirect_to authByOk.getAuthUrl
+	redirect_to Oauth::Ok::OkAuth.new(@options).getAuthUrl
 end
 </pre></li>
 	<li>Create callback action
@@ -31,8 +30,7 @@ def loginByOkCallback
 		'client_secret'     => [your_app_client_secret],
 		'application_key'   => [your_app_client_public],
 	}
-	authByOk = Oauth::Ok::OkAuth.new(@options)
-	userOkData = authByOk.getUserData(get["code"])
+	userOkData = Oauth::Ok::OkAuth.new(@options).getUserData(get["code"])
 end
 </pre></li>
   <li>Save userdata in DB and login him</li>
